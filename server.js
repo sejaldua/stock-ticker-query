@@ -11,7 +11,7 @@ http.createServer(function (req, res) {
     var checkBox = (obj.toggle) ? true : false;
     var query = obj.query;
 
-    const client = new MongoClient(url1, {useNewUrlParser: true, useUnifiedTopology: true, native_parser: true});
+    const client = new MongoClient(url1, {useNewUrlParser: true, native_parser: true});
     
     connect(client, checkBox, query, res);
 
