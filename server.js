@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const url1 = "mongodb+srv://sejaldua:Tbl@zer58@cluster0-eeltb.mongodb.net/test?retryWrites=true&w=majority";
+const uri = "mongodb+srv://sejaldua:Tbl@zer58@cluster0-eeltb.mongodb.net/test?retryWrites=true&w=majority";
 var port = process.env.PORT || 8000;
 
 var http = require('http');
@@ -11,7 +11,7 @@ http.createServer(function (req, res) {
     var checkBox = (obj.toggle) ? true : false;
     var query = obj.query;
 
-    const client = new MongoClient(url1, {useNewUrlParser: true, useUnifiedTopology: true, native_parser: true});
+    const client = new MongoClient(uri, {useNewUrlParser: true, useUnifiedTopology: true, native_parser: true});
     
     connect(client, checkBox, query, res);
 
