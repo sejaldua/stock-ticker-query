@@ -33,14 +33,14 @@ async function connect(client, checkBox, query, res) {
                 for (i = 0; i < items.length; i++) {
                     if (checkBox) {
                         if (items[i].company == query) {
-                            res.write("<html><body><div style='text-align: center; background-color: black; color: rgb(55, 238, 18); margin-top: 30px; font-size: 14px;'>" + query + "'s ticker symbol is: " + items[i].ticker + "</div></body></html>");
+                            res.write("<html><body style='text-align: center; background-color: black; color: rgb(55, 238, 18); margin-top: 30px; font-size: 14px;'>" + query + "'s ticker symbol is: " + items[i].ticker + "</body></html>");
                             found = true;
                             break;
                         }
                     }
                     else {
                         if (items[i].ticker == query) {
-                            res.write("<html><body><div style='text-align: center; background-color: black; color: rgb(55, 238, 18); margin-top: 30px; font-size: 14px;'>" + query + " is the ticker symbol for " + items[i].company + "</div>");
+                            res.write("<html><body style='text-align: center; background-color: black; color: rgb(55, 238, 18); margin-top: 30px; font-size: 14px;'>" + query + " is the ticker symbol for " + items[i].company + "</body></html>");
                             found = true;
                             break;
                         }
@@ -48,7 +48,7 @@ async function connect(client, checkBox, query, res) {
                 }
 
                 if (!found) {
-                    res.write("<html><body><div style='text-align: center; background-color: black; color: rgb(55, 238, 18); margin-top: 30px; font-size: 14px;'>Oops! The company or ticker you have queried is not in our stock database.</div>");
+                    res.write("<html><body style='text-align: center; background-color: black; color: rgb(55, 238, 18); margin-top: 30px; font-size: 14px;'>Oops! The company or ticker you have queried is not in our stock database.</body></html");
                 }
             }
         });  //end find
