@@ -1,5 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 const url1 = "mongodb+srv://sejaldua:Tbl@zer58@cluster0-eeltb.mongodb.net/test?retryWrites=true&w=majority";
+var port = process.env.PORT || 3000;
 
 var http = require('http');
 var url = require('url');
@@ -14,7 +15,7 @@ http.createServer(function (req, res) {
     
     connect(client, checkBox, query, res);
 
-}).listen(8000);
+}).listen(port);
 
 async function connect(client, checkBox, query, res) {
     client.connect(err => {
