@@ -33,14 +33,14 @@ async function connect(client, checkBox, query, res) {
                 for (i = 0; i < items.length; i++) {
                     if (checkBox) {
                         if (items[i].company == query) {
-                            res.write(query + "'s ticker symbol is: " + items[i].ticker);
+                            res.write("<html><body><div style='text-align: center'>" + query + "'s ticker symbol is: " + items[i].ticker + "</div></body></html>");
                             found = true;
                             break;
                         }
                     }
                     else {
                         if (items[i].ticker == query) {
-                            res.write(query + " is the ticker symbol for " + items[i].company);
+                            res.write("<div>" + query + " is the ticker symbol for " + items[i].company + "</div>");
                             found = true;
                             break;
                         }
